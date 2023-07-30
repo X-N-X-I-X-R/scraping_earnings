@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>menuweed</title>
+      <style>
+            body {
+                  font-family: Arial, sans-serif;
+                  text-align: center;
+                  margin: 0;
+            }
+
+            h1 {
+                  color: white;
+                  background-color: #4CAF50;
+                  padding: 20px;
+                  margin: 0;
+            }
+
+            hr {
+                  border: 1px solid #4CAF50;
+            }
+
+            form {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  margin-top: 20px;
+            }
+
+            label,
+            select {
+                  font-size: 18px;
+            }
+
+            select {
+                  padding: 5px;
+                  margin-bottom: 10px;
+            }
+
+            button {
+                  border: none;
+                  background: none;
+                  cursor: pointer;
+            }
+
+            .weed-image {
+                  width: 200px;
+                  height: 200px;
+                  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjWG8wHSHq1uUk0cDTgx-4r5r-9DuwFgcSCA&usqp=CAU");
+                  background-size: cover;
+                  background-position: center;
+                  border-radius: 50%;
+            }
+
+            .shopping-cart-image {
+                  width: 150px;
+            }
+      </style>
+</head>
+
+<body>
+      <div class="weed-image"></div>
+      <h1>MENU</h1>
+      <hr>
+
+      <form action="http://127.0.0.1:5500/firstsite2/shoppingcart.html" method="get" target="_blank">
+            <label for="weedkinds">Choose a kind:</label>
+            <select name="Kinds" id="Kinds">
+                  <option value="sativa">Sativa</option>
+                  <option value="indica">Indica</option>
+                  <option value="hybrid">Hybrid</option>
+            </select>
+
+            <label for="quantity">Grams:</label>
+            <select name="quantity" id="quantity">
+                  <option value="25" id="25">25 (300$)</option>
+                  <option value="50" id="50">50 (550$)</option>
+                  <option value="100" id="100">100(900$)</option>
+            </select>
+
+            <button type="submit">
+                  <img class="shopping-cart-image"
+                        src="https://cannalized.com/cdn/shop/files/Slide-1.png?v=1666595009&width=1500"
+                        alt="Shopping Cart">
+            </button>
+      </form>
+</body>
+
+</html>

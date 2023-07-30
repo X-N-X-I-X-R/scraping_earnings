@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <title>CANNABIS LABS</title>
+      <style>
+            body {
+                  font-family: Arial, sans-serif;
+                  background-repeat: no-repeat;
+                  background-color: #000000;
+                  color: #000000;
+                  line-height: 1.2;
+            }
+
+            h1,
+            h2,
+            h3 {
+                  color: #29ff04;
+            }
+
+            .container {
+                  max-width: 800px;
+                  margin: 50% auto;
+                  border-end-end-radius :inherit;
+                  background-color: #000000;
+                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            input {
+                  padding: 10px;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  flex-direction: initial;
+
+            }
+
+            button {
+                  width: 100%;
+                  padding: 10px;
+                  background-color: #008080;
+                  border: none;
+                  color: #ffffff;
+                  cursor: pointer;
+                  border-radius: 4px;
+                  margin-top: 10px;
+                  /* מרווח בין הלחצנים */
+            }
+
+            button:hover {
+                  background-color: #005959;
+            }
+
+            img {
+                  display: block;
+                  margin: 20px auto;
+                  max-width: 100%;
+                  height: auto;
+            }
+
+            .div1,
+            .div2,
+            .div3 {
+                  padding: 10px;
+                  margin-bottom: 20px;
+                  color: #ffffff;
+                  text-align: center;
+                  /* הוספנו את זה כדי שהטקסט ב-divs יירכז לאמצע */
+            }
+
+            .div1 {
+                  background-color: #f90e8b;
+            }
+
+            .div2 {
+                  background-color: #033f14;
+            }
+
+            .div2 ul {
+                  list-style: none;
+                  padding: 0;
+            }
+
+            .div2 li {
+                  padding: 5px;
+                  text-align: center;
+                  border-bottom: 1px solid #ffffff;
+            }
+
+            .div3 {
+                  background-color: #98fb98;
+            }
+            .weed-image {
+                  width: 250px;
+                  height: 200px;
+                  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjWG8wHSHq1uUk0cDTgx-4r5r-9DuwFgcSCA&usqp=CAU");
+                  background-size: cover;
+                  background-position: center;
+                  border-radius: 100%;
+            }
+      </style>
+</head>
+
+<body>
+      <header>
+
+            <img class="weed-image"
+             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjWG8wHSHq1uUk0cDTgx-4r5r-9DuwFgcSCA&usqp=CAU"
+                  alt="Cannabis Flower 2" >
+            
+            <audio controls>
+                  <source src="audio/lofi-study-112191 (1).mp3" type="audio/mpeg">
+            </audio>
+      </header>
+      <h1>BULLDOG</h1>
+      <h1>CANNABIS LABS</h1>
+      <form onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+          
+               
+           
+        </form>
+    
+        <script>
+            function validateForm() {
+                // הקבלת ערכי שדות הקלט
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+    
+                // התנאים לסיסמה נכונה (לדוגמה: לא פחות מ-6 תווים)
+                if (password.length < 6) {
+                    alert("Password must be at least 6 characters long.");
+                    return false; // מונע את שליחת הטופס אם הסיסמה לא תקינה
+                }
+    
+                // אם הסיסמה תקינה, הטופס ישלח כרגיל
+                return true;
+            }
+        </script>
+            <div class="form-group">
+                  <button type="submit">Login<a href="http://127.0.0.1:5500/firstsite2/menu.html"></button>
+            </div>
+      </form>
+
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/OHNlx7DuRhY" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+
+      <header>
+      </header>
+      <div class="div1"><a href="http://127.0.0.1:5500/firstsite2/menu.html">Customer Service</a></div>
+
+      <div class="div2"><a href="weed.html">press to call</a></div>
+
+  
+</body>
+
+</html>

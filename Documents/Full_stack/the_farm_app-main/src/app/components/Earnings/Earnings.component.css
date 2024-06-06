@@ -1,0 +1,13 @@
+.modal-body {
+  display: none;
+}
+
+.modal-body.show {
+  animation: showAndHide 4s forwards;
+}
+
+@keyframes showAndHide {
+  0% { display: none; }
+  1% { display: block; }
+  100% { display: none; }
+}

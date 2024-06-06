@@ -1,0 +1,99 @@
+<div class="stock-details-container" *ngIf="!isLoading">
+  <mat-card>
+    <form [formGroup]="stockForm" (ngSubmit)="getStockDetails()">
+      <mat-form-field>
+        <input matInput placeholder="Enter Stock Symbol" formControlName="symbol">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Get Details</button>
+    </form>
+  </mat-card>
+  
+  <mat-card *ngIf="stockDetails">
+    <mat-card-header>
+      <mat-card-title>{{ stockDetails.name }}</mat-card-title>
+      <mat-card-subtitle>{{ stockDetails.ticker }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Industry:</strong> {{ stockDetails.finnhubIndustry }}</p>
+      <p><strong>Market Capitalization:</strong> {{ stockDetails.marketCapitalization | number }}</p>
+      <p><strong>Share Outstanding:</strong> {{ stockDetails.shareOutstanding | number }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="stockQuote">
+    <mat-card-header>
+      <mat-card-title>Quote</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Current Price:</strong> {{ stockQuote.c }}</p>
+      <p><strong>High Price:</strong> {{ stockQuote.h }}</p>
+      <p><strong>Low Price:</strong> {{ stockQuote.l }}</p>
+      <p><strong>Open Price:</strong> {{ stockQuote.o }}</p>
+      <p><strong>Previous Close:</strong> {{ stockQuote.pc }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="stockTargetPrice">
+    <mat-card-header>
+      <mat-card-title>Target Price</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Target Price:</strong> {{ stockTargetPrice.target }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="stockTrend">
+    <mat-card-header>
+      <mat-card-title>Technical Indicator Trend</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Trend:</strong> {{ stockTrend.trend }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="stockHistoSentiment">
+    <mat-card-header>
+      <mat-card-title>Historical Sentiment</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div id="chartContainer" style="height: 400px; max-width: 920px; margin: 0px auto;"></div>
+      <h6 *ngIf="!stockHistoSentiment || stockHistoSentiment.length === 0" class="card-subtitle mb-2 text-muted">
+        No data available for the asset
+      </h6>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="stockEarnings">
+    <mat-card-header>
+      <mat-card-title>Earnings</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div id="earningsChartContainer" style="height: 400px; max-width: 920px; margin: 0px auto;"></div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="stockBuzz">
+    <mat-card-header>
+      <mat-card-title>News Sentiment</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Buzz:</strong> {{ stockBuzz.buzz }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="stockNews">
+    <mat-card-header>
+      <mat-card-title>Latest News</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngFor="let news of stockNews">
+        <p><strong>{{ news.headline }}</strong></p>
+        <p>{{ news.summary }}</p>
+        <a [href]="news.url" target="_blank">Read more</a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>

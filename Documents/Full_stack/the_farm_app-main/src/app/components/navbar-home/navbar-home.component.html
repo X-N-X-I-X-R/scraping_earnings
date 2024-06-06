@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mr-auto">
+	<div class="container-fluid">
+		<a class="navbar-brand" routerLink="/home">Home</a>
+		<button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/stocks">Stocks</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/forex">Forex</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/crypto">Cryptos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link mr-3" routerLink="/test">Test</a>
+				</li>
+				<li class="nav-item">
+					<form class="d-flex ">
+						<div class="input-group mr-sm-2 " matAutocompleteOrigin #origin="matAutocompleteOrigin">
+							<input type="text" class="form-control " name="first"
+           placeholder="Search an asset"
+           [matAutocomplete]="auto"
+           [(ngModel)]="model"
+           (ngModelChange)="modelChangeFn($event)"
+          >
+							<mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
+								style="z-index: 3 !important;">
+								<mat-option *ngFor="let option of results" [value]='option["displaySymbol"]'>
+									<a class="nav-link" href="/stocks/{{option.symbol}}">{{option.description}}
+										({{option.type}})</a>
+								</mat-option>
+							</mat-autocomplete>
+						</div>
+					</form>
+				</li>
+			</ul>
+			<!--<form class="d-flex">
+				<input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          [ngModel]="search"
+          (ngModelChange)="modelChangeFn($event)"
+          [ngModelOptions]="{standalone: true}"
+        />
+      </form>-->
+
+
+		</div>
+	</div>
+</nav>

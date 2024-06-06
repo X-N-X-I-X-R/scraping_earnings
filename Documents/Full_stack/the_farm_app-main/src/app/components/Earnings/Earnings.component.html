@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <title>All EARNINGS </title>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">EARNINGS</h1>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">NAME</th>
+          <th scope="col">TIKER</th>
+          <th scope="col">ACTION</th>
+          <th scope="col">Watchlist</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ... -->
+        <tr>
+          <td>Advanced Micro Devices, Inc.</td>
+          <td><a href="http://127.0.0.1:8888/earning/">AMD</a></td>
+          <td><button type="button" class="btn btn-primary" (click)="addTicker('AMD')">Add</button></td>
+                    <td>
+            <span *ngIf="currentTickers.includes('AMD'); else notInWatchlist">Yes</span>
+            <ng-template #notInWatchlist>No</ng-template>
+          </td>
+          
+
+
+         </tr>
+          <tr>
+            <td>Apple Inc.</td>
+             <a href="https://investor.apple.com/investor-relations/default.aspx">AAPL</a>
+                       <td><button type="button" class="btn btn-primary" (click)="addTicker('AAPL')">Add</button></td>       
+                          <td>
+            <span *ngIf="currentTickers.includes('AAPL'); else notInWatchlist">Yes</span>
+            <ng-template #notInWatchlist>No</ng-template>
+          </td>
+
+         
+          </tr>
+          
+          <tr>
+            <td>Microsoft Corporation</td>
+            <a href="https://www.microsoft.com/en-us/investor">MSFT</a>
+                          <td><button type="button" class="btn btn-primary" (click)="addTicker('MSFT')">Add</button></td>
+                                    <td>
+            <span *ngIf="currentTickers.includes('MSFT'); else notInWatchlist">Yes</span>
+            <ng-template #notInWatchlist>No</ng-template>
+          </td>
+          </tr>
+          <tr>
+            <td>Amazon.com Inc.</td>
+            <a href="https://ir.aboutamazon.com/investor-relations">AMZN</a>
+            <td><button type="button" class="btn btn-primary" (click)="addTicker('AMZN')">Add</button></td>
+                      <td>
+            <span *ngIf="currentTickers.includes('AMZN'); else notInWatchlist">Yes</span>
+            <ng-template #notInWatchlist>No</ng-template>
+          </td>
+          </tr>          
+          <tr>
+            <td>Alphabet Inc.</td>
+            <a href="https://abc.xyz/investor/">GOOGL</a>
+                          <td><button type="button" class="btn btn-primary" (click)="addTicker('GOOGL')">Add</button></td>
+                                    <td>
+            <span *ngIf="currentTickers.includes('GOOGL'); else notInWatchlist">Yes</span>
+            <ng-template #notInWatchlist>No</ng-template>
+          </td>
+          </tr>
+  
+          <tr>
+            <td>Intel Corporation</td>
+            <a href="https://www.intc.com/investor-relations/default.aspx">INTC</a>
+                          <td><button type="button" class="btn btn-primary" (click)="addTicker('INTC')">Add</button></td>
+                                    <td>
+            <span *ngIf="currentTickers.includes('INTC'); else notInWatchlist">Yes</span>
+            <ng-template #notInWatchlist>No</ng-template>
+          </td>
+          </tr>
+          <tr>
+            <td>NVIDIA Corporation</td>
+            <a href="https://investor.nvidia.com/home/default.aspx">NVDA</a>
+                          <td><button type="button" class="btn btn-primary" (click)="addTicker('NVDA')">Add</button></td>
+                                    <td>
+            <span *ngIf="currentTickers.includes('NVDA'); else notInWatchlist">Yes</span>
+            <ng-template #notInWatchlist>No</ng-template>
+          </td>
+          </tr>
+          <tr>
+            <td>Tesla Holdings, Inc.</td>
+            <a href="https://earnings-wbmobin2jsl-ulzzsh.puter.site">TSLA</a>
+                          <td><button type="button" class="btn btn-primary" (click)="addTicker('TSLA')">Add</button></td>
+                                    <td>
+            <span *ngIf="currentTickers.includes('TSLA'); else notInWatchlist">Yes</span>
+            <ng-template #notInWatchlist>No</ng-template>
+          </td>
+          </tr>
+          <tr>
+            <td>Facebook, Inc.</td>
+            <a href="https://investor.fb.com/investor-news/default.aspx">META</a>
+                          <td><button type="button" class="btn btn-primary" (click)="addTicker('META')">Add</button></td>
+                                    <td>
+            <span *ngIf="currentTickers.includes('META'); else notInWatchlist">Yes</span>
+            <ng-template #notInWatchlist>No</ng-template>
+          </td>
+          </tr>
+          <tr>
+            <td>Netflix, Inc.</td>
+            <a href="https://ir.netflix.net/investor-news-and-events/investor-news/default.aspx">NFLX</a>
+                          <td><button type="button" class="btn btn-primary" (click)="addTicker('NFLX')">Add</button></td>
+                                    <td>
+            <span *ngIf="currentTickers.includes('NFLX'); else notInWatchlist">Yes</span>
+            <ng-template #notInWatchlist>No</ng-template>
+          </td>
+          </tr>
+
+      
+      
+        <tr *ngFor="let earning of earningsPage">
+          <td>{{ earning.name }}</td>
+          <td><a href="{{ earning.link }}">{{ earning.ticker }}</a></td>
+          
+          <td>
+            <span *ngIf="currentTickers.includes(earning.ticker); else notInWatchlist">Yes</span>
+            <ng-template #notInWatchlist>No</ng-template>
+          </td>
+          </tr>
+
+    
+
+      </tbody>
+    </table>
+
+   
+
+      
+  </div>
+
+
+
+
+
+</body>
+</html>
+
+         

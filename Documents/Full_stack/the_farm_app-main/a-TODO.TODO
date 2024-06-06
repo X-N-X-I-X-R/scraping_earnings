@@ -1,0 +1,2 @@
+# FIX -  when user are disabled or deleted from the server block the user inmmediatly in the client side 
+# UPDATE -  to find another way to save user token in the client side not in the session storage  

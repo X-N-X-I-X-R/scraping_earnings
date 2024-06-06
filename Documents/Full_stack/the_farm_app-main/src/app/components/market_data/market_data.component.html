@@ -1,0 +1,8 @@
+<div *ngIf="patents">
+  <h2>Patents for NVDA from 2020-01-01 to 2021-05-01</h2>
+  <ul>
+    <li *ngFor="let patent of patents">
+      {{ patent }}
+    </li>
+  </ul>
+</div>

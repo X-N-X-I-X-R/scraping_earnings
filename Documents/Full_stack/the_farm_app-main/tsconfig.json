@@ -1,0 +1,33 @@
+// tsconfig.json 
+
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "es2022",
+    "useDefineForClassFields": true,
+    "lib": ["es2018", "dom"],
+    "typeRoots": ["node_modules/@types", "/Users/elmaliahmac/Documents/Full_stack/the_farm_app-main/src/app/finnhub.d.ts"]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    "importHelpers": true
+  },
+  "files": ["src/main.ts", "src/polyfills.ts"]
+}

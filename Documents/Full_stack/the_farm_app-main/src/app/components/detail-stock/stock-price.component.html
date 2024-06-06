@@ -1,0 +1,70 @@
+<!-- <div *ngIf="quote">
+  <h2>Stock Price</h2>
+  <p>Current price: {{ quote.c }}</p>
+  <p>Change: {{ quote.d }}</p>
+  <p>Percent change: {{ quote.dp }}</p>
+  <p>High price of the day: {{ quote.h }}</p>
+  <p>Low price of the day: {{ quote.l }}</p>
+  <p>Open price of the day: {{ quote.o }}</p>
+  <p>Previous close price: {{ quote.pc }}</p>
+</div> -->
+
+<!-- stock_price.component.html -->
+<div *ngIf="stockData">
+  <h2>Stock Price for {{ stockData.symbol }}</h2>
+  <p>Current Price: {{ stockData.c }}</p>
+  <p>Change: {{ stockData.d }}</p>
+  <p>Percent Change: {{ stockData.dp }}%</p>
+  <p>High Price of the Day: {{ stockData.h }}</p>
+  <p>Low Price of the Day: {{ stockData.l }}</p>
+  <p>Open Price of the Day: {{ stockData.o }}</p>
+  <p>Previous Close Price: {{ stockData.pc }}</p>
+</div>
+<div *ngIf="errorMessage">
+  <p>{{ errorMessage }}</p>
+</div>
+
+
+<!-- 
+:ng add igniteui-angular\])-the_farm_app-main$:
+ℹ Using package manager: npm
+✔ Found compatible package version: igniteui-angular@17.2.5.
+✔ Package information loaded.
+
+The package igniteui-angular@17.2.5 will be installed and
+ executed.
+Would you like to proceed? Yes
+✔ Packages successfully installed.
+? Add CSS library to reset HTML element styles across 
+browsers? Yes
+? Add HammerJS setup for touch-specific interactions 
+support? Yes
+    Including fflate - Version: ^0.8.1
+    Including @igniteui/material-icons-extended - Version: ^3.0.0
+    Including hammerjs - Version: ^2.0.8
+    Could not find a matching main property under build options in Angular workspace. Some updates may not execute correctly.
+    Could not find a matching main property under test options in Angular workspace. Some updates may not execute correctly.
+    Including @types/hammerjs - Version: ^2.0.40
+    Could not find matching server options in Angular workspace src. It could require you to manually add and update the server section.
+    Could not find a matching stylePreprocessorOptions includePaths array property under server options. It could require you to manually update it to "stylePreprocessorOptions": { "includePaths": ["node_modules"] }
+    
+    Ignite UI for Angular installed
+    Learn more: https://www.infragistics.com/products/ignite-ui-angular
+    
+UPDATE package.json (1712 bytes)
+UPDATE angular.json (3626 bytes)
+✔ Packages installed successfully.
+    
+    Ignite UI for Angular Schematics installed
+    - generate components using 'ng g @igniteui/angular-schematics:c'
+    - to use as 'ng new' collection install globally 'npm i -g @igniteui/angular-schematics'
+    Learn more: https://www.infragistics.com/products/ignite-ui-angular/angular/components/general/cli-overview.html
+    
+CREATE ignite-ui-cli.json (391 bytes)
+UPDATE src/index.html (1120 bytes)
+UPDATE angular.json (3776 bytes)
+UPDATE src/app/app.module.ts (3056 bytes)
+
+
+
+ -->

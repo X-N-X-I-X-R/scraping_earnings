@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
+      <img src="/assets/img/background-image.jpeg" alt="The Farm Logo" class="logo">
+      <div class="brand-text">
+        <span class="appname">The Farm</span>
+        <div class="slogan">Be ready to fight</div>
+      </div>
+    </a>
+    <!-- Navbar Toggler Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Navbar Menu Items -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/profile', userId]">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/login">Login</a>
+    
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/logout">Logout</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/stock-patents">Stock Patents</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/earnings">Earnings</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/register">Register</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/data-charts">Data Charts</a> 
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" routerLink="/stocks/:symbol">Stocks -details</a> 
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<div *ngIf="loading">Loading data...</div>
+<div *ngIf="error">{{ error }}</div>
+<div *ngIf="!loading && patents.length">
+  <h2>Patents for NVDA from 2020-01-01 to 2021-05-01</h2>
+  <div *ngFor="let patent of patents">
+    <h3>{{ patent.description }}</h3>
+    <p><strong>Date:</strong> {{ patent.filingDate }}</p>
+    <p><strong>Company:</strong> {{ patent.companyFilingName ? patent.companyFilingName.join(', ') : 'No company listed' }}</p>
+    <p><strong>Patent Number:</strong> {{ patent.patentNumber }}</p>
+    <hr>
+  </div>
+</div>
+<div *ngIf="!loading && !patents.length && !error">
+  <p>No patents found.</p>
+</div>
